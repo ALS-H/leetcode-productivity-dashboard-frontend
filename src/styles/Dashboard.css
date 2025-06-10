@@ -1,0 +1,129 @@
+/* GLOBAL RESET */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: 'Segoe UI Italic', cursive, 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  text-align: right;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+/* Main Dashboard Container */
+.dashboard-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 2fr 320px 1.2fr;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+/* Responsive Grid Collapse */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 2.2rem;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .left-column,
+  .middle-column,
+  .right-column {
+    width: 100%;
+  }
+}
+
+/* Further Scale for Small Devices */
+@media (max-width: 600px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Columns */
+.left-column,
+.middle-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Ensure middle column adapts */
+.middle-column {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.card {
+  background-color: #CBF1F5;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Scrollbars for side columns */
+.left-column,
+.right-column {
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #54b4be #68c5cf;
+}
+
+.left-column::-webkit-scrollbar,
+.right-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.left-column::-webkit-scrollbar-track,
+.right-column::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.left-column::-webkit-scrollbar-thumb,
+.right-column::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0;
+  border-radius: 10px;
+}
+
+/* Ensure images and canvas resize correctly */
+.card img,
+.card canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Animate resizing smoothly */
+.dashboard-container,
+.card {
+  transition: all 0.3s ease-in-out;
+}
